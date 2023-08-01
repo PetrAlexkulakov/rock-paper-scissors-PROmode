@@ -1,0 +1,21 @@
+{
+  "devDependencies": {
+    "@types/node": "^20.4.5",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "crypto-js": "^4.1.1"
+  },
+  "name": "rock-paper-scissors-promode",
+  "description": "",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node dist/index.js 1 2 3"
+  },
+  "author": "",
+  "license": "ISC"
+}
