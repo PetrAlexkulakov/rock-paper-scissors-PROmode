@@ -11,13 +11,14 @@ export class Crypto {
 
     generateRandomKey() {
         const keyLength = 32;
-        const randomKey = crypto.randomBytes(keyLength).toString('hex');
-        return randomKey;
+        this.key = crypto.randomBytes(keyLength).toString('hex');
+        return this.key;
     }
 
     calculateHMAC(data: string, key: string, algorithm: string) {
         const hmac = crypto.createHmac(algorithm, key);
         hmac.update(data);
-        return hmac.digest('hex');
+        this.hmac = hmac.digest('hex')
+        return this.hmac;
     }
 }
