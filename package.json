@@ -14,7 +14,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "start": "npm run build && node dist/index.js 1 2 3"
+    "start": "npm run build && node dist/index.js First second third fourth fifth sixth seventh"
   },
   "author": "",
   "license": "ISC"
