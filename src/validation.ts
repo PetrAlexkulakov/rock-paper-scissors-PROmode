@@ -1,8 +1,12 @@
+import { Rules } from "./rules";
+
 export class Validation {
     private argv: string[];
+    private ourRules: Rules;
   
-    constructor(argv: string[]){
+    constructor(argv: string[], ourRules: Rules){
       this.argv = argv;
+      this.ourRules = ourRules;
       this.validateAllArguments()
     }
 
@@ -15,9 +19,15 @@ export class Validation {
     }
 
     validateAChoose(choose: string) {
-        if(!this.argv[Number(choose)]) {
+        if(Number(choose) === 0) {
+            process.exit(1);
+        } else if (choose === '?'){
+            this.ourRules.consoleTableRules()
+            return false;
+        } else if(!this.argv[Number(choose) - 1]) {
             console.log('Wrong parametrs!')
             process.exit(1);
         }
+        return true;
     }
 }

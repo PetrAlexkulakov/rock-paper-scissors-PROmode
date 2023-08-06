@@ -22,10 +22,18 @@ export class Rules {
             }
         })
       })
-      this.consoleTableRules()
     }
     
     consoleTableRules() {
       console.table(this.rules);
+    }
+
+    handlePersonMove(personMove: string, computerMove: string) {
+        const personMoveString = this.argv[Number(personMove) - 1]
+        console.log(`${this.calculateResult(personMoveString, computerMove)}!`)
+    }
+
+    private calculateResult(personMove: string, computerMove: string){
+      return this.rules[personMove][computerMove];
     }
 }
