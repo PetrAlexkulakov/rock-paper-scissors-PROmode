@@ -22,6 +22,10 @@ export class Rules {
             }
         })
       })
-    //   console.log(this.rules)
+      this.consoleTableRules()
+    }
+    
+    consoleTableRules() {
+      console.table(this.rules);
     }
 }

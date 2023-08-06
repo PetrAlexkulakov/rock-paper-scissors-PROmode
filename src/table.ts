@@ -1,4 +1,5 @@
 import { Rules } from "./rules.js";
+
 export class Table {
     private argv: string[];
     private rules: Rules;

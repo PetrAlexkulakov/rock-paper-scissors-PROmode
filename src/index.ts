@@ -1,4 +1,4 @@
-import * as readline from'readline';
+import * as readline from 'readline';
 import { Crypto } from './hmac.js';
 import { Table } from './table.js';
 import { Validation } from './validation.js';
