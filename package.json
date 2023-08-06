@@ -1,12 +1,14 @@
 {
   "devDependencies": {
     "@types/node": "^20.4.7",
+    "@types/underscore": "^1.11.6",
     "typescript": "^5.1.6"
   },
   "dependencies": {
     "console-table-printer": "^2.11.2",
     "crypto": "^1.0.1",
-    "crypto-js": "^4.1.1"
+    "crypto-js": "^4.1.1",
+    "underscore": "^1.13.6"
   },
   "name": "rock-paper-scissors-promode",
   "description": "",

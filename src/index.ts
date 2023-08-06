@@ -1,4 +1,5 @@
 import * as readline from 'readline';
+import * as underscore from 'underscore';
 import { Crypto } from './hmac.js';
 import { Table } from './table.js';
 import { Validation } from './validation.js';
@@ -12,7 +13,7 @@ class Game {
   private ourRules: Rules;
   private randomKey: string;
   private personMove: string | null;
-  private computerMove: string | null;
+  private computerMove: string | undefined;
 
   constructor(argv: string[]){
     this.argv = argv;
@@ -27,8 +28,7 @@ class Game {
   }
 
   private getComputerMove() {
-    const random = Math.floor(Math.random() * this.argv.length) //todo change it
-    return this.argv[random]
+    return underscore.sample(this.argv) 
   }
 
   private async getPersonMove() {
@@ -74,19 +74,3 @@ class Game {
 
 const game = new Game(process.argv.splice(2));
 game.start()
-
-// 1) генерация правил
-// 2) генерация таблицы
-// 3) генерация ключа и hmac (функции генерации ключа и HMAC должны быть в отдельном классе(из текста задания))
-// 4) Основной цикл игры — компьютер ходит, пользователь ходит.
-
-// При выборе опции "help" в терминале нужно отобразить таблицу, определяющую какой ход выигрывает.
-// Генерация таблицы должна быть вынесена в отдельный класс, определение "правил" кто победил должно 
-// быть в отдельном классе, функции генерации ключа и HMAC должны быть в отдельном классе (как минимум 4 класса).
-
-// Победа определяется так — половина следующих по кругу выигрывает, половина предыдущих по кругу 
-// проигрывает (семантика строк не важна, в какой последовательности что пользователь ввел, в такую игру и играет, 
-// даже если по его порядку камень проигрывает ножницам — для вас содержимое строк не важно).
-
-
-//to do: help
