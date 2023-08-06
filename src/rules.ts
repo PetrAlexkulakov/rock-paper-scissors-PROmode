@@ -1,6 +1,6 @@
 export class Rules {
     private argv: string[];
-    private rules: any; //todo
+    private rules: any;
 
     constructor(argv: string[]){
       this.argv = argv;
