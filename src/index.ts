@@ -43,7 +43,6 @@ class Game {
   private doEndGame(randomKey: string) {
     console.log(`Your move: ${this.personMove}`);
     console.log(`Computer move: ${this.computerMove}`);
-    //
     console.log('HMAC key:')
     console.log(randomKey)
   }
@@ -77,4 +76,4 @@ game.start()
 // даже если по его порядку камень проигрывает ножницам — для вас содержимое строк не важно).
 
 
-//to do: verif, help, endless
+//to do: help, endless

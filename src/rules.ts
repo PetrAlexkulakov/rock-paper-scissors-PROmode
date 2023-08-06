@@ -8,19 +8,20 @@ export class Rules {
     }
 
     generateRules() {
+      const length = this.argv.length;
       this.argv.forEach((arg1, index1) => {
         this.argv.forEach((arg2, index2) => { 
             this.rules[arg1] ? null : this.rules[arg1] = {}
-            const minus = index2 - index1 > 0 ? null : this.argv.length - 1 - (index2 - index1)
-            if (index2 - index1 > 0) {
-                this.rules[arg1][arg2] = "Win" 
-            } else if (index2 - index1 < 0) {
+            const minus = index2 - index1 >= 0 ? index2 - index1 : length + (index2 - index1)
+            if (minus == 0) {
+                this.rules[arg1][arg2] = "Draw" 
+            } else if (minus > length / 2) {
                 this.rules[arg1][arg2] = "Lose" 
             } else {
-                this.rules[arg1][arg2] = "Draw" 
+                this.rules[arg1][arg2] = "Win" 
             }
         })
       })
-      //console.log(this.rules)
+    //   console.log(this.rules)
     }
 }
