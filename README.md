@@ -26,5 +26,11 @@ npm run build
 ## Running application
 
 ```
+node dist/index.js {Your arguments}
+```
+
+## Running sample application
+
+```
 npm start
 ```
