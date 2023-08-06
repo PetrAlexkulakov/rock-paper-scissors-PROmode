@@ -24,7 +24,7 @@ export class Validation {
         } else if (choose === '?'){
             this.ourRules.consoleTableRules()
             return false;
-        } else if(!this.argv[Number(choose) - 1]) {
+        } else if(!this.ourRules.moveToString(choose)) {
             console.log('Wrong parametrs!')
             process.exit(1);
         }

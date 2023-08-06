@@ -29,8 +29,11 @@ export class Rules {
     }
 
     handlePersonMove(personMove: string, computerMove: string) {
-        const personMoveString = this.argv[Number(personMove) - 1]
-        console.log(`${this.calculateResult(personMoveString, computerMove)}!`)
+        console.log(`${this.calculateResult(this.moveToString(personMove), computerMove)}!`)
+    }
+
+    moveToString(personMove: string) {
+      return this.argv[Number(personMove) - 1]
     }
 
     private calculateResult(personMove: string, computerMove: string){

@@ -57,7 +57,7 @@ class Game {
   }
 
   private async doEndGame() {
-    console.log(`Your move: ${this.personMove}`);
+    console.log(`Your move: ${this.ourRules.moveToString(this.personMove as string)}`);
     console.log(`Computer move: ${this.computerMove}`);
     this.ourRules.handlePersonMove(this.personMove as string, this.computerMove as string);
     console.log('HMAC key:')
